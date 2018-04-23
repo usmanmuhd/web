@@ -392,6 +392,7 @@ class Bounty(SuperModel):
 
     @property
     def value_in_eth(self):
+        return None
         if self.token_name == 'ETH':
             return self.value_in_token
         try:
@@ -413,6 +414,7 @@ class Bounty(SuperModel):
 
     @property
     def value_in_usdt(self):
+        return None
         if self.status in self.OPEN_STATUSES:
             return self.value_in_usdt_now
         return self.value_in_usdt_then
@@ -445,12 +447,14 @@ class Bounty(SuperModel):
 
     @property
     def token_value_in_usdt(self):
+        return None
         if self.status in self.OPEN_STATUSES:
             return self.token_value_in_usdt_now
         return self.token_value_in_usdt_then
 
     @property
     def token_value_time_peg(self):
+        return None
         if self.status in self.OPEN_STATUSES:
             return timezone.now()
         return self.web3_created
