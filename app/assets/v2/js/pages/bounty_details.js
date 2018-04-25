@@ -173,7 +173,7 @@ var callbacks = {
       $('#network').addClass('hidden');
       return [ null, null ];
     }
-    var warning = 'WARNING: this is a ' + val + ' network bounty, and is NOT real money.  To see mainnet bounties, go to <a href="/explorer">the bounty explorer</a> and search for mainnet bounties.  ';
+    var warning = gettext('WARNING: this is a ' + val + ' network bounty, and is NOT real money.  To see mainnet bounties, go to <a href="/explorer">the bounty explorer</a> and search for mainnet bounties.  ');
 
     return [ 'network', warning ];
   },
